@@ -36,9 +36,9 @@ public:
 			cout << "chon hocsinh/giaovien: ";
 			cin.ignore();
 			getline(cin, loai);
-			if (loai == "hs")
+			if (loai == "hs") 
 				dsNguoi[i] = new hocSinh;
-			else if (loai == "gv")
+			else if (loai == "gv") 
 				dsNguoi[i] = new giaoVien;
 			dsNguoi[i]->nhap();
 		}
@@ -47,9 +47,38 @@ public:
 	{
 		for (int i = 0; i < soLuong; i++)
 		{
-		
 			dsNguoi[i]->xuat();
 		}
 	}
+	float timDiemTrungBinhCaoNhat()
+	{
+
+		float max = 0;
+			for (int i = 0; i < soLuong; i++)
+			{
+				string loai = typeid(*this->dsNguoi[i]).name();
+				if (loai == "class HocSinh")
+				{
+					if (max < ((hocSinh*)this->dsNguoi[i])->tinhDiemTrungBinh());
+					max = ((hocSinh*)this->dsNguoi[i])->tinhDiemTrungBinh();
+				}
+				return max;
+			}
+			return max;
+	}
+	TruongHoc timHocSinhCoDiemTrungBinhCaoNhat()
+	{
+hocSinh** dsDTB;
+		dsDTB = new hocSinh * [this->soLuong];
+	}
+	int timThamNienCaoNhat()
+	{
+
+	}
+	TruongHoc timGiaoVienCoThamNienCaoNhat()
+	{
+
+	}
+
 };
 

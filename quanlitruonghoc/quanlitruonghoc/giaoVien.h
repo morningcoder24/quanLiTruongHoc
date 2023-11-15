@@ -10,11 +10,12 @@ public:
 	{
 		cout << "nhap nam bat dau: "; cin >> this->namBatDau;
 		cout << "nhap chuyen mon: "; cin >> this->chuyenMon; 
-	} ;
+	}
 	void xuat()
 	{
 		cout << "nam bat dau: " << this->namBatDau << endl;
 		cout << "chuyen mon la: " << this->chuyenMon << endl;
+		cout << "tham nien cua giao vien la: " << tinhThamNien() << endl;
 	}
 	int tinhThamNien()
 	{
